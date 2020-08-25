@@ -138,7 +138,6 @@ global     rate_yaw_pid_reset_filter
     setup_motors() ;
     inint=0;
     end
- 
   %% mode 1 :copter Stabilize,2:copter althold ,3:copter poshold,4:Plane Stabilize 5:Plane TECS; 6：Plane L1  
   updata_cl();
   rc=1/(2*pi*arspeed_filt);

@@ -1,6 +1,7 @@
 %mode_Multicopter
 load bus_comper.mat
-load IOBusInfo_V1000_20200807.mat
+load IOBusInfo_V1000_20200825.mat
+load IOBusInfo_byc_202008242.mat
 pianzhuanjiao
 quad_tail_4a1=0;
 plane_mode=ENUM_plane_mode.V1000;
@@ -67,6 +68,43 @@ PathModeOut_sl.prePathPoint_LLA=[40,100 ,0]*1e7;
 PathModeOut_sl.curPathPoint_LLA=[40,100.01, 0]*1e7;
 PathModeOut_sl.rollCmd=0.1;
 
+algo_remote_ct_st.mode=0;
+algo_remote_ct_st.roll=0;
+algo_remote_ct_st.pitch=0;
+algo_remote_ct_st.yaw=0;
+algo_remote_ct_st.throttle=0; 
+algo_remote_ct_st.tilt_anglein=0;
+
+algo_dbg_param.headingCmd=0;
+algo_dbg_param.groundspeedCmd=0;
+algo_dbg_param.heightCmd=0;
+algo_dbg_param.flightTaskMode=ENUM_FlightTaskMode.Rotor2Fix_Mode;
+algo_dbg_param.maxClimbSpeed=0; 
+
+ Curr_sate.accel_x=0;
+ Curr_sate.accel_y=0;
+ Curr_sate.accel_z=0;
+ Curr_sate.gyro_x=0;
+ Curr_sate.gyro_y=0;
+ Curr_sate.gyro_z=0;
+ Curr_sate.EAS_Algo=0;
+ Curr_sate.EAS2TAS_Algo=1;
+ curVelNED=[0 0 0];
+ Curr_sate.curLLA=[0 0 0];
+ Curr_sate.pitchd=0;
+ Curr_sate.rolld=0;
+ Curr_sate.yawd=0;
+ 
+ Sevro_pwm.k_aileron=0;
+ Sevro_pwm.k_elevator=0;
+ Svero_pwm.k_rudder=0;
+ Svero_pwm.tail_tilt=0;
+ Svero_pwm.pwm_out=[1000 1000 1000 1000];
+ Svero_pwm.pwm_tail=1000;
+
+
+
+
 current_loc=[40,100]*1e7;
 loc_origin=[40,100]*1e7;
 
@@ -93,7 +131,7 @@ aspeed_c2ps=13;
     mode=0;
     mode_state=0;
     ts=0;
-    dt=0.012;
+    dt=0.005;
     thrust_slew_time=0.3;%%%%%%%%%%%%%%%%油门时间
     throttle_slewrate=100;%%%%%%%%%%%%%%%%TECS 油门变化率
     disable_integrator_pitch=0;
