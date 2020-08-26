@@ -1,6 +1,6 @@
 %mode_Multicopter
 load bus_comper.mat
-load IOBusInfo_V1000_20200825.mat
+load IOBusInfo_V1000_20200826.mat
 load IOBusInfo_byc_202008242.mat
 pianzhuanjiao
 quad_tail_4a1=0;
